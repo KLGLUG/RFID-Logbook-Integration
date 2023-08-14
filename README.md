@@ -18,6 +18,13 @@ HARDWARE:
 2) RC-522 RFID Reader
 3) LEDs and Buzzer
 
+# PIN Config
+D8 - SDA (SS)
+D5 - SCK
+D7 - MOSI
+D6 - MISO(SCL)
+D3 - RST
+
 # SCREENSHOTS
 1) Password Authentication :
 
