@@ -12,6 +12,7 @@
 #define GreenLed D0
 #define BlueLed D2
 #define WaitLed D4
+WiFiClient wifiClient;
 
 MFRC522 mfrc522(SS_PIN, RST_PIN); // Create MFRC522 instance.
 
@@ -82,7 +83,7 @@ void loop() {
   getData = CardID;
   Link = "http://host_name/process/?card_id="+ getData; // ENTER YOUR HOST NAME HERE
   
-  http.begin(Link);
+  http.begin(wifiClient,Link);
   int httpCode = http.GET();            //Send the request
   delay(10);
   String payload = http.getString();    //Get the response payload
